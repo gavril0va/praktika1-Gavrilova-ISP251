@@ -52,3 +52,56 @@ double studentsPerGroupCorrect = (double)totalStudents / groupsCount;
 
 Console.WriteLine($"25 / 4 как int: {studentsPerGroupWrong}");
 Console.WriteLine($"25 / 4 как double: {studentsPerGroupCorrect}");
+
+
+Console.WriteLine();
+Console.WriteLine("Способы собрать строку");
+
+string firstName = "Анна";
+string lastName = "Смирнова";
+
+// Способ 1: конкатенация через оператор +
+string fullNameConcat = firstName + " " + lastName;
+
+// Способ 2: интерполяция через $""
+string fullNameInterp = $"{firstName} {lastName}";
+
+// Способ 3: метод string.Concat
+string fullNameConcatMethod = string. Concat(firstName, " ", lastName);
+
+Console.WriteLine(fullNameConcat);
+Console.WriteLine(fullNameInterp);
+Console.WriteLine(fullNameConcatMethod);
+Console.WriteLine($"Всe три строки равны: {fullNameConcat == fullNameInterp && fullNameInterp == fullNameConcatMethod}");
+
+
+Console.WriteLine();
+Console.WriteLine("Константы");
+
+const double VatRate = 0.20;
+const string CollegeName = "ВФ ВолГУ";
+
+double productPrice = 1000;
+double priceWithVat = productPrice * (1 + VatRate);
+
+Console.WriteLine($"Учебное заведение: {CollegeName}");
+Console.WriteLine($"Цена без НДС: {productPrice}, с НДС ({VatRate:P0}): {priceWithVat}");
+
+
+Console.WriteLine();
+Console.WriteLine("Константы");
+
+// НДС и название вуза — фиксированные данные, которые не должны меняться
+// во время работы программы, поэтому объявлены как const.
+const double VatRate = 0.20;
+const string CollegeName = "ВФ ВолГУ";
+
+// Базовая цена может меняться, а цена с НДС вычисляется из неё и ставки налога,
+// чтобы формула расчёта хранилась в одном месте.
+double productPrice = 1000;
+double priceWithVat = productPrice * (1 + VatRate);
+
+// Выводим итоговую информацию для пользователя: вуз, цену без НДС
+// и цену с НДС, где ставка показана в виде процента.
+Console.WriteLine($"Учебное заведение: {CollegeName}");
+Console.WriteLine($"Цена без НДС: {productPrice}, с НДС ({VatRate:P0}): {priceWithVat}");
